@@ -173,3 +173,6 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
 
+# 追加設定の読み込み
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
