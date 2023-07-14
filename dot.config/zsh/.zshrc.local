@@ -1,0 +1,28 @@
+# vim:set ft=zsh:
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
+
+# export TERMINFO='/usr/share/terminfo/'
+# export TERM=xterm-direct emac
+# TERM=xterm-24bits
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
+# perl
+# cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+
+# php-cs-fixer
+#alias php-cs-fixer=/Users/takumi.konta/.composer/vendor/friendsofphp/php-cs-fixer/php-cs-fixer
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/takumi.konta/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+# phpbrew
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+export PHPBREW_SET_PROMPT=1
+export PHPBREW_RC_ENABLE=1
+
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
+export GOPATH=$(go env GOPATH)
+export PATH=$PATH:$(go env GOPATH)/bin

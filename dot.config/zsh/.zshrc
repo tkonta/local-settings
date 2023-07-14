@@ -123,11 +123,9 @@ bindkey '^R' history-incremental-pattern-search-backward
 
 alias la='ls -a'
 alias ll='ls -l'
-
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-
 alias mkdir='mkdir -p'
 
 # sudo の後のコマンドでエイリアスを有効にする
@@ -151,7 +149,6 @@ elif which putclip >/dev/null 2>&1 ; then
 fi
 
 
-
 ########################################
 # OS 別の設定
 case ${OSTYPE} in
@@ -169,10 +166,5 @@ esac
 # my bin path
 export PATH="$HOME/bin:$PATH"
 
-# vim:set ft=zsh:
-export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init -)"
-
 # 追加設定の読み込み
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
-
