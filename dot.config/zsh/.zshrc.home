@@ -1,0 +1,3 @@
+# after asdf install
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
