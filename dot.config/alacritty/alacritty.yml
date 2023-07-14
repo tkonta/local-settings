@@ -19,7 +19,7 @@ shell:
   args:
     - -l
     - -c
-    - "/usr/local/bin/tmux a -t 0 || /usr/local/bin/tmux -u"
+    - "/opt/homebrew/bin/tmux a -t 0 || /opt/homebrew/bin/tmux -u"
 
 # 選択範囲をコピー
 selection:
