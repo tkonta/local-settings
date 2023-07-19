@@ -1,3 +1,5 @@
+# zshrcから読み込まれるオフィス用設定
+
 # vim:set ft=zsh:
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
