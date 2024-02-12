@@ -1,0 +1,56 @@
+[font]
+size = 13
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+
+[shell]
+args = ["-l", "-c", "/opt/homebrew/bin/tmux a -t 0 || /opt/homebrew/bin/tmux -u"]
+program = "/bin/zsh"
+
+[window]
+option_as_alt = "OnlyLeft"
+
+[window.padding]
+x = 4
+y = 4
+
+
+[[keyboard.bindings]]
+chars = "\u0000"
+key = "Space"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u0018@c;"
+key = "Semicolon"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001F"
+key = "Slash"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u0018@c,"
+key = "Comma"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u0018@c."
+key = "Period"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u0018@c\t"
+key = "Tab"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u0018\u001E"
+key = "Tab"
+mods = "Control|Shift"
