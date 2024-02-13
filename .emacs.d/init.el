@@ -4,10 +4,6 @@
 ;;; Code:
 ;;
 
-;; emacs29で解決予定のエラー回避
-;; https://emacs.stackexchange.com/questions/74289/emacs-28-2-error-in-macos-ventura-image-type-invalid-image-type-svg
-;; (setq image-types '(svg png gif tiff jpeg xpm xbm pbm))
-
 (eval-and-compile
   (when (or load-file-name byte-compile-current-file)
     (setq user-emacs-directory
@@ -38,6 +34,9 @@
 
 
 (setq dired-use-ls-dired nil)
+
+;; 日本語環境でのバックスラッシュ入力
+(define-key global-map [?¥] [?\\])
 
 ;; leaf
 
@@ -151,6 +150,13 @@
     (global-display-line-numbers-mode t)))
 
 
+(leaf exec-path-from-shell
+  :doc ローカル環境変数の読み込み
+  :ensure t
+  :config
+  (exec-path-from-shell-initialize)
+  )
+
 
 (leaf leaf-convert
   :doc "macクリップボードの共有"
@@ -236,7 +242,7 @@
 (leaf smartparens
   :doc "カッコの処理"
   :ensure t
-  :hook (after-init-hook . smartparens-global-strict-mode) ; strictモードを有効化
+  ;; :hook (after-init-hook . smartparens-global-strict-mode) ; strictモードを有効化
   :require smartparens-config
   :custom ((electric-pair-mode . nil))) ; electirc-pair-modeを無効化
 
@@ -574,4 +580,3 @@
 
 (provide 'init)
 ;;; init.el ends here
-
