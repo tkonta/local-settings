@@ -524,6 +524,7 @@
 
 
 (leaf neotree
+  :ensure t
   :init
   (setq-default neo-keymap-style 'concise)
   :bind (("C-," . neotree-toggle))
