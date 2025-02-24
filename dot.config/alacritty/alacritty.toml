@@ -8,8 +8,8 @@ multiplier = 3
 [selection]
 save_to_clipboard = true
 
-[shell]
-args = ["-l", "-c", "/opt/homebrew/bin/tmux a -t 0 || /opt/homebrew/bin/tmux -u"]
+[terminal.shell]
+args = ["-l", "-c", "tmux a -t 0 || tmux -u"]
 program = "/bin/zsh"
 
 [window]
@@ -54,3 +54,5 @@ mods = "Control"
 chars = "\u0018\u001E"
 key = "Tab"
 mods = "Control|Shift"
+
+[terminal]
