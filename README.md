@@ -1,23 +1,15 @@
 # local-settings
 
-開発環境セットアップファイル等の管理
+各種設定ファイルの管理
 
-brew install
-```
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
 
-terminal install
-```
-brew install --cask alacritty
+zsh環境別設定の読み込み
+```sh
+cd dot.config/zsh
+ln -s .zshrc.local.home .zshrc.local
 ```
 
-tmux install
+.configへ配置
+```sh
+ln -s dot.config ~/.config
 ```
-brew install tmux
-```
-
-emacs install(terminal only)
-```
-brew install emacs
-``` 
