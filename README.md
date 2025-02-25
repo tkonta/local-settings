@@ -9,6 +9,13 @@ cd dot.config/zsh
 ln -s .zshrc.local.home .zshrc.local
 ```
 
+
+zsh環境設定ファイルの配置
+```sh
+cd dot.config/zsh
+ln -s .zshenv ~/
+```
+
 .configへ配置
 ```sh
 ln -s dot.config ~/.config
