@@ -170,7 +170,6 @@ export PATH="$HOME/bin:$PATH"
 
 # 追加設定の読み込み
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
-export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
 # alarittyでタブを使う設定
 echo -e '\e[>4;1m'
@@ -178,3 +177,6 @@ echo -e '\e[>4;1m'
 # for nix
 export DARWIN_USER=$(whoami)
 export DARWIN_HOST=$(hostname -s)
+
+# homebrew
+eval $(/opt/homebrew/bin/brew shellenv)
