@@ -1,6 +1,3 @@
-# search
-brew install ripgrep
-
 # perl
 ## formatter
 brew install perltidy
