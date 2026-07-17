@@ -381,5 +381,59 @@
  ;; If there is more than one, they won't work right.
  )
 
+(use-package org
+  :bind (:map org-mode-map
+              ("M-f" . org-metaright)
+              ("M-b" . org-metaleft)
+              ("M-n" . org-metadown)
+              ("M-p" . org-metaup)
+              ))
+
+(defun my-buffer-matches-file-p ()
+  "現在のバッファ内容が、参照中のファイルと同じなら non-nil を返す。"
+  (when (and buffer-file-name
+             (file-readable-p buffer-file-name))
+    (let ((source-buffer (current-buffer))
+          (file-name buffer-file-name)
+          (coding-system buffer-file-coding-system))
+      (with-temp-buffer
+        (let ((coding-system-for-read coding-system))
+          (insert-file-contents file-name))
+        (let ((file-buffer (current-buffer)))
+          (with-current-buffer source-buffer
+            (save-restriction
+              (widen)
+              (= 0
+                 (compare-buffer-substrings
+                  source-buffer
+                  (point-min)
+                  (point-max)
+                  file-buffer
+                  (with-current-buffer file-buffer (point-min))
+                  (with-current-buffer file-buffer (point-max)))))))))))
+
+(defun my-clear-modified-if-unchanged ()
+  "ファイルとの差分がない場合だけ、変更フラグを解除する。"
+  (interactive)
+  (cond
+   ((not buffer-file-name)
+    (user-error "このバッファはファイルを参照していません"))
+
+   ((not (file-readable-p buffer-file-name))
+    (user-error "参照中のファイルを読み込めません"))
+
+   ((my-buffer-matches-file-p)
+    (set-buffer-modified-p nil)
+    (set-visited-file-modtime)
+    (message "ファイルとの差分がないため、変更フラグを解除しました"))
+
+   (t
+    (message "ファイルとの差分があります"))))
+
+(global-set-key
+ (kbd "C-c C-;")
+ #'my-clear-modified-if-unchanged)
+
+
 (provide 'init)
 ;;; init.el ends here
