@@ -1,10 +1,9 @@
-elpa
 .emacs.desktop
 .emacs.desktop.lock
 .mc-lists.el
 .persistent-scratch
 auto-save-list
 backups
-elpa
 history
 recentf
+eln-cache
